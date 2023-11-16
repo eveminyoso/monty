@@ -4,9 +4,8 @@
  * @stack: pointer to the stack
  * @line_number: line number of the opcode in the Monty file
  */
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, int value, unsigned int line_number)
 {
-	int value;
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (scanf("%d", &value) != 1)

@@ -1,18 +1,12 @@
-#include <stdio.h>
+#include "monty.h"
+
 /**
- *
- *
- *
- *
-
-void nop()
+ * nop - does nothing
+ * @stack: double pointer to the beginning of the stack
+ * @line_number: current line number in the Monty bytecodes file
+ */
+void nop(stack_t **stack, unsigned int line_number)
 {
-
-}
-
-int main() 
-{
-	nop();
-	
-	return (0);
+	(void)stack;
+	(void)line_number; 
 }
