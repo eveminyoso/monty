@@ -2,17 +2,14 @@
 /**
  * push - pushes an element onto the stack
  * @stack: pointer to the stack
+ * @value:digit
  * @line_number: line number of the opcode in the Monty file
  */
 void push(stack_t **stack, int value, unsigned int line_number)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 
-	if (scanf("%d", &value) != 1)
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+	(void)line_number;
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
