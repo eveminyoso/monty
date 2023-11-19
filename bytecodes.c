@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: %s file\n", argv[0]);
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	if (file == NULL)
@@ -34,14 +34,14 @@ int main(int argc, char *argv[])
 				value = atoi(input_string);
 				if (value == 0)
 				{
-					fprintf(stderr, "L%d: usage: push integer\n", line_number);
+					fprintf(stderr, "L%d: usage: push integer\n", line_number + 1);
 					exit(EXIT_FAILURE);
 				}
 				push(&stack, value, line_number);
 			}
 			else
 			{
-				fprintf(stderr, "L%d: usage: push integer\n", line_number);
+				fprintf(stderr, "L%d: usage: push integer\n", line_number + 1);
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -54,5 +54,6 @@ int main(int argc, char *argv[])
 		}
 	}
 	fclose(file);
+	free_stack(stack);
 	return (0);
 }
