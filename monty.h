@@ -21,6 +21,7 @@ typedef struct stack_s
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
+	int mode;
 } stack_t;
 /**
  * struct instruction_s - opcode and its function
@@ -45,4 +46,16 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void execute_instruction(stack_t **stack, char *instruction, int value, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void div_op(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
+void shtack(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
+int is_ascii(int c);
+int is_ascii_printable(int value);
 #endif
