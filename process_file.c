@@ -24,12 +24,6 @@ void process_file(FILE *file, stack_t **stack)
 		{
 			if (fscanf(file, "%s", input_string) == 1)
 			{
-				value = atoi(input_string);
-				if (value == 0)
-				{
-					fprintf(stderr, "L%d: usage: push integer\n", line_number + 1);
-					exit(EXIT_FAILURE);
-				}
 				push(stack, value, line_number);
 			}
 			else
