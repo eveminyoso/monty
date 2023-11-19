@@ -6,7 +6,7 @@
  */
 void process_file(FILE *file, stack_t **stack)
 {
-	int value;
+	int value = 0;
 	unsigned int line_number = 0;
 	char opcode[5];
 	char input_string[20];
